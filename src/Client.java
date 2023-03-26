@@ -3,9 +3,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
-    private String host;
-    private int port;
-    private String userName;
+    private final String host;
+    private final int port;
 
     public Client(String host, int port) {
         this.host = host;
@@ -24,7 +23,7 @@ public class Client {
             Scanner scanner = new Scanner(System.in);
 
             while (true) {
-                userName = scanner.nextLine();
+                String userName = scanner.nextLine();
                 if (!userName.isEmpty()) {
                     output.println(userName);
                     break;

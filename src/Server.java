@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Server {
-    private int port;
-    private Set<String> userNames = new HashSet<>();
-    private Set<Interaction> allClients = new HashSet<>();
+    private final int port;
+    private final Set<String> userNames = new HashSet<>();
+    private final Set<Interaction> allClients = new HashSet<>();
 
     public Server(int port) {
         this.port = port;

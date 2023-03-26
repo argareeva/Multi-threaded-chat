@@ -2,10 +2,9 @@ import java.io.*;
 import java.net.Socket;
 
 public class Interaction extends Thread {
-    private Socket socket;
-    private Server server;
+    private final Socket socket;
+    private final Server server;
     private PrintWriter output;
-    private String userName;
 
     public Interaction(Socket socket, Server server) {
         this.socket = socket;
@@ -21,6 +20,7 @@ public class Interaction extends Thread {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             output = new PrintWriter(outputStream);
 
+            String userName;
             while (true) {
                 userName = reader.readLine();
                 if (!server.hasUser(userName)) {
